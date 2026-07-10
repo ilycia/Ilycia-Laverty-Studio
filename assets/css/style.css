@@ -1,0 +1,912 @@
+/* ==========================================================
+   ILYCIA LAVERTY
+   STUDIO 1.0
+
+   Living Studio
+   Architecture
+   Art
+   Objects
+   Ideas
+
+========================================================== */
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+:root{
+
+    --paper:#F5F2EC;
+
+    --text:#3E3935;
+
+    --text-light:#7D746B;
+
+    --shadow:
+
+        0 12px 36px rgba(0,0,0,.16);
+
+}
+
+
+/* ==========================================================
+   DOCUMENT
+========================================================== */
+
+html,
+body{
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+body{
+
+    overflow:hidden;
+
+    font-family:
+
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    color:var(--text);
+
+}
+
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
+img{
+
+    display:block;
+
+}
+
+
+/* ==========================================================
+   STUDIO
+========================================================== */
+
+.studio{
+
+    position:relative;
+
+    width:100vw;
+
+    height:100vh;
+
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    pointer-events:none;
+
+    z-index:20;
+
+}
+
+
+.hero-tagline{
+
+    margin-top:26px;
+
+    font-size:.95rem;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:var(--text-light);
+
+}
+
+
+.hero-title{
+
+    margin-top:8px;
+
+    font-size:4rem;
+
+    font-weight:500;
+
+    color:rgba(62,57,53,.18);
+
+}
+
+
+/* ==========================================================
+   STUDIO TABLE
+========================================================== */
+
+.studio-table{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+
+.tabletop{
+
+    width:100%;
+
+    height:100%;
+
+    background-image:
+
+        url("../images/ui/tabletop.webp");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================================
+   WORKS
+========================================================== */
+
+.works{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+/* ==========================================================
+   POSTCARDS
+========================================================== */
+
+.work-card{
+
+    position:absolute;
+
+    width:230px;
+
+    height:auto;
+
+    cursor:grab;
+
+    user-select:none;
+
+    transition:
+
+        transform .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+
+.work-card:hover{
+
+    box-shadow:var(--shadow);
+
+    z-index:100;
+
+}
+
+
+/* ==========================================================
+   FIELD KIT
+========================================================== */
+
+.field-kit{
+
+    position:fixed;
+
+    top:28px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:
+
+        14px
+        18px;
+
+    border-radius:999px;
+
+    background:
+
+        rgba(247,241,234,.88);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+
+        0 8px 28px rgba(0,0,0,.10);
+
+    z-index:500;
+
+}
+
+
+/* ==========================================================
+   MAKER MARK
+========================================================== */
+
+.maker-mark{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.maker-mark img{
+
+    width:34px;
+
+    height:auto;
+
+}
+
+
+/* ==========================================================
+   MENU BUTTON
+========================================================== */
+
+.menu-button{
+
+    border:none;
+
+    background:none;
+
+    font-size:1.3rem;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.search{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+.search input{
+
+    width:320px;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:1rem;
+
+    color:var(--text);
+
+}
+
+
+.search input::placeholder{
+
+    color:var(--text-light);
+
+}
+
+
+/* ==========================================================
+   DROPDOWN MENU
+========================================================== */
+
+.menu{
+
+    display:none;
+
+    position:absolute;
+
+    top:70px;
+
+    left:0;
+
+    min-width:220px;
+
+    padding:1rem;
+
+    border-radius:24px;
+
+    background:rgba(247,241,234,.94);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:0 12px 36px rgba(0,0,0,.12);
+
+}
+
+
+.menu a{
+
+    display:block;
+
+    padding:.45rem 0;
+
+    color:var(--text);
+
+}
+
+
+/* ==========================================================
+   PAGE LAYOUT
+========================================================== */
+
+.page{
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:
+
+        140px
+        60px
+        80px;
+
+}
+
+
+.page h1{
+
+    margin-bottom:3rem;
+
+    font-size:3.5rem;
+
+    font-weight:500;
+
+}
+
+
+.page p{
+
+    line-height:1.8;
+
+    max-width:760px;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* ==========================================================
+   ARCHITECTURE
+========================================================== */
+
+.architecture-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(320px,1fr));
+
+    gap:2rem;
+
+}
+
+
+/* ==========================================================
+   ART
+========================================================== */
+
+.art-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(300px,1fr));
+
+    gap:2rem;
+
+}
+
+
+.artwork{
+
+    background:white;
+
+    box-shadow:
+
+        0 6px 20px rgba(0,0,0,.10);
+
+}
+
+
+.artwork img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+
+/* ==========================================================
+   ABOUT
+========================================================== */
+
+.about{
+
+    max-width:760px;
+
+}
+
+
+.about p{
+
+    margin-bottom:2rem;
+
+}
+
+
+/* ==========================================================
+   PROCESS
+========================================================== */
+
+.process{
+
+    max-width:900px;
+
+}
+
+
+.process p{
+
+    margin-bottom:1.8rem;
+
+}
+
+
+/* ==========================================================
+   UTILITIES
+========================================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+
+.center{
+
+    text-align:center;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:1200px){
+
+    .work-card{
+
+        width:200px;
+
+    }
+
+}
+
+
+@media (max-width:900px){
+
+    .hero-title{
+
+        font-size:3rem;
+
+    }
+
+    .field-kit{
+
+        width:92%;
+
+    }
+
+    .search input{
+
+        width:100%;
+
+    }
+
+}
+
+
+@media (max-width:700px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .hero-title{
+
+        font-size:2.3rem;
+
+    }
+
+    .hero-tagline{
+
+        font-size:.8rem;
+
+    }
+
+    .field-kit{
+
+        gap:.7rem;
+
+        padding:
+
+            .8rem
+            1rem;
+
+    }
+
+    .maker-mark img{
+
+        width:42px;
+
+    }
+
+    .menu-button{
+
+        font-size:1.1rem;
+
+    }
+
+    /* ==========================================================
+   ABOUT PAGE
+========================================================== */
+
+.about-page{
+
+    background:#A6AD9A;
+
+    color:var(--text);
+
+}
+
+
+.page-tagline{
+
+    margin-top:80px;
+
+    margin-bottom:10px;
+
+    text-align:center;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+    color:rgba(62,57,53,.55);
+
+}
+
+
+.page-title{
+
+    margin-bottom:80px;
+
+    text-align:center;
+
+    font-size:6rem;
+
+    font-weight:500;
+
+    color:rgba(62,57,53,.14);
+
+}
+
+
+.portrait-placeholder{
+
+    width:100%;
+
+    height:600px;
+
+    margin-bottom:80px;
+
+    border:2px dashed rgba(62,57,53,.2);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:1rem;
+
+    color:rgba(62,57,53,.45);
+
+}
+
+
+.writing{
+
+    max-width:760px;
+
+    margin:0 auto 140px auto;
+
+}
+
+
+.writing h2{
+
+    margin-bottom:30px;
+
+    font-size:2rem;
+
+    font-weight:500;
+
+}
+
+
+.writing p{
+
+    margin-bottom:30px;
+
+    line-height:1.9;
+
+    font-size:1.08rem;
+
+}
+
+/* ==========================================================
+   ART PAGE
+========================================================== */
+
+.art-page{
+
+    background:#F3F0EA;
+
+    overflow-y:auto;
+
+}
+
+
+.gallery{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:140px;
+
+}
+
+
+.artwork{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+
+.artwork img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+
+}
+
+
+.artwork h2{
+
+    margin-top:18px;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:rgba(62,57,53,.65);
+
+}
+
+/* ==========================================================
+   EXHIBITION
+========================================================== */
+
+.art-page{
+
+    background:#F3F0EA;
+
+    overflow-y:auto;
+
+}
+
+
+.exhibition{
+
+    max-width:1400px;
+
+}
+
+
+.exhibition-works{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:220px;
+
+}
+
+
+.exhibition-works a{
+
+    display:block;
+
+    text-decoration:none;
+
+}
+
+
+.exhibition-works img{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    box-shadow:
+
+        0 16px 40px rgba(0,0,0,.10);
+
+    transition:
+
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.exhibition-works img:hover{
+
+    transform:scale(1.01);
+
+    box-shadow:
+
+        0 24px 60px rgba(0,0,0,.16);
+
+}
+
+
+.collection-link{
+
+    margin:
+
+        220px
+        0
+        120px;
+
+    text-align:center;
+
+}
+
+
+.collection-link a{
+
+    font-size:1.2rem;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    opacity:.65;
+
+    transition:opacity .3s ease;
+
+}
+
+
+.collection-link a:hover{
+
+    opacity:1;
+
+}
+
+}
