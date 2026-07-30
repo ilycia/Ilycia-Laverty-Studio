@@ -34,11 +34,11 @@
 
 :root{
 
-    --paper:#F5F2EC;
+    --paper:#eae2dc;
 
     --table:#E8E0D3;
 
-    --text:#3E3935;
+    --text:#998b80b3;
 
     --text-light:#6A635B;
 
@@ -213,14 +213,6 @@ img{
 
     height:100%;
 
-    background-image:url("../images/ui/tabletop.webp");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
     overflow:hidden;
 
 }
@@ -239,6 +231,137 @@ img{
     height:100%;
 
     isolation:isolate;
+
+}
+
+
+/* ==========================================================
+   FIELD KIT 2.0
+========================================================== */
+
+.field-kit{
+
+    position:fixed;
+
+    top:30px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92vw,300px);
+
+    z-index:1000;
+
+}
+
+.field-kit-art{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+    opacity:.95;
+
+    pointer-events:none;
+
+}
+
+.maker-mark-link{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:70px;
+    height:70px;
+
+    z-index:20;
+
+}
+
+.field-search{
+
+    position:absolute;
+
+    left:34px;
+    top:8px;
+
+    width:140px;
+    height:36px;
+
+    border:none;
+    background:none;
+    outline:none;
+
+    font:inherit;
+    font-size:0.75rem;
+
+    color:#d2cdc4;
+    caret-color:#d2cdc4;
+
+    z-index:20;
+
+}
+
+.menu-toggle{
+
+    position:absolute;
+
+    right:10px;
+    top:5px;
+
+    width:70px;
+    height:70px;
+
+    border:none;
+    background:transparent;
+
+    cursor:pointer;
+
+    z-index:20;
+
+}
+
+.field-menu{
+
+    display:none;
+
+    position:absolute;
+
+    top:145px;
+
+    right:70px;
+
+}
+
+.field-menu a{
+
+    display:block;
+
+    margin-bottom:14px;
+
+    text-decoration:none;
+
+    color:#2F343A;
+
+    font-size:.95rem;
+
+    letter-spacing:.06em;
+
+}
+
+.field-menu a:hover{
+
+    color:#6F89A8;
+
+}
+
+.field-menu.open{
+
+    display:block;
 
 }
 
@@ -306,225 +429,6 @@ img{
     cursor:grabbing;
 
     transition:none;
-
-}
-
-
-/* ==========================================================
-   FIELD KIT
-========================================================== */
-
-.field-kit{
-
-    position:fixed;
-
-    top:50%;
-
-    right:36px;
-
-    transform:translateY(-50%);
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-    padding:14px 18px;
-
-    border-radius:999px;
-
-    background:rgba(247,241,234,.62);
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(90,65,38,.08);
-
-    box-shadow:
-        0 10px 30px rgba(90,65,38,.18);
-
-    z-index:500;
-
-    cursor:grab;
-
-    user-select:none;
-
-}
-
-
-/* ----------------------------------------------------------
-   Dragging
----------------------------------------------------------- */
-
-.field-kit.dragging{
-
-    cursor:grabbing;
-
-    transform:
-        translateY(-50%)
-        scale(1.02);
-
-    box-shadow:
-        0 22px 54px rgba(0,0,0,.18);
-
-}
-
-
-/* ==========================================================
-   MAKER MARK
-========================================================== */
-
-.maker-mark{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    flex-shrink:0;
-
-}
-
-
-.maker-mark img{
-
-    width:34px;
-
-    height:auto;
-
-    display:block;
-
-}
-
-
-/* ==========================================================
-   MENU BUTTON
-========================================================== */
-
-.menu-button{
-
-    border:none;
-
-    background:none;
-
-    padding:0;
-
-    font-size:1.25rem;
-
-    color:var(--text);
-
-    cursor:pointer;
-
-    transition:
-        transform .22s ease,
-        opacity .22s ease,
-        color .22s ease;
-
-}
-
-.menu-button:hover{
-
-    opacity:.72;
-
-}
-
-
-/* ==========================================================
-   SEARCH
-========================================================== */
-
-.search{
-
-    display:flex;
-
-    align-items:center;
-
-    flex:1;
-
-}
-
-.search input{
-
-    width:320px;
-
-    border:none;
-
-    outline:none;
-
-    background:transparent;
-
-    font-size:1rem;
-
-    font-family:inherit;
-
-    color:var(--text);
-
-}
-
-.search input::placeholder{
-
-    color:var(--text-light);
-
-    opacity:.8;
-
-}
-
-
-/* ==========================================================
-   DROPDOWN MENU
-========================================================== */
-
-.menu{
-
-    display:none;
-
-    position:absolute;
-
-    top:72px;
-
-    left:0;
-
-    min-width:230px;
-
-    padding:18px 22px;
-
-    border-radius:22px;
-
-    border:1px solid rgba(90,65,38,.08);
-
-    background:rgba(247,241,234,.92);
-
-    backdrop-filter:blur(18px);
-
-    box-shadow:
-        0 18px 42px rgba(0,0,0,.14);
-
-}
-
-.menu a{
-
-    display:block;
-
-    padding:10px 0;
-
-    color:var(--text);
-
-    font-size:.95rem;
-
-    letter-spacing:.04em;
-
-    transition:
-        color .22s ease,
-        transform .22s ease;
-
-}
-
-.menu a:hover{
-
-    color:#6f5d47;
-
-    transform:translateX(6px);
 
 }
 
@@ -794,26 +698,6 @@ img{
 
     }
 
-    .field-kit{
-
-        right:20px;
-
-        transform:translateY(-50%) scale(.96);
-
-    }
-
-    .search{
-
-        flex:1;
-
-    }
-
-    .search input{
-
-        width:100%;
-
-    }
-
 }
 
 
@@ -849,36 +733,6 @@ img{
     .work-card{
 
         width:170px;
-
-    }
-
-    .field-kit{
-
-        right:50%;
-
-        bottom:20px;
-
-        top:auto;
-
-        transform:translateX(50%) scale(.95);
-
-    }
-
-    .search input{
-
-        font-size:.95rem;
-
-    }
-
-    .maker-mark img{
-
-        width:38px;
-
-    }
-
-    .menu-button{
-
-        font-size:1.1rem;
 
     }
 

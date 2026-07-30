@@ -18,42 +18,52 @@
 
 <body class="art-page">
 
-    <!-- ==========================================
-         FIELD KIT
-    ========================================== -->
+<!-- ==========================================================
+     BLUEPRINT
+========================================================== -->
 
-    <aside class="field-kit">
+<aside class="field-kit">
 
-        <a href="../index.html"
-           class="maker-mark">
+    <img
+        class="field-kit-art"
+        src="../assets/images/ui/field-kit.webp"
+        alt="Blueprint Navigation">
 
-            <img src="../assets/images/ui/makersmark.svg"
-                 alt="Maker's Mark">
+    <a
+        class="maker-mark-link"
+        href="../index.html"
+        aria-label="Home">
+    </a>
 
-        </a>
+<input
+    class="field-search"
+    type="search"
+    placeholder="search..."
+    autocomplete="off">
 
-        <button class="menu-button">
+    <button
+        class="menu-toggle"
+        aria-label="Menu">
+    </button>
 
-            ☰
+    <nav class="field-menu">
 
-        </button>
+        <a href="../architecture/">Architecture</a>
 
-        <label class="search">
+        <a href="../art/">Art</a>
 
-            <input
-                type="search"
-                placeholder="Search the Studio...">
+        <a href="../about/">About</a>
 
-        </label>
+    </nav>
 
-    </aside>
+</aside>
 
 
     <!-- ==========================================
          EXHIBITION
     ========================================== -->
 
-    <main class="page exhibition">
+    <main class="page exhibition-page">
 
 
         <section class="exhibition-works">
@@ -98,6 +108,8 @@
         </footer>
 
     </main>
+
+    <script src="../assets/js/script.js"></script>
 
 </body>
 

@@ -94,13 +94,27 @@ function buildStudio(works) {
 
         card.className = "work-card";
 
+        card.draggable = false;
+
         card.src = work.image;
 
         card.alt = work.title;
 
         placeCard(card, index);
 
+        card.dataset.index = index;
+
         studio.appendChild(card);
+
+    card.addEventListener("mousedown", (event) => {
+
+    activeCard = card;
+
+    highestZ++;
+
+    activeCard.style.zIndex = highestZ;
+
+});
 
     });
 
@@ -131,6 +145,7 @@ function placeCard(card, index) {
 ========================================================== */
 
 loadStudio();
+
 
 /* ==========================================================
    DRAG FIELD KIT
@@ -175,5 +190,45 @@ document.addEventListener("mouseup", () => {
     dragging = false;
 
     fieldKit.classList.remove("dragging");
+
+});
+
+
+/* ==========================================================
+   BLUEPRINT MENU
+========================================================== */
+
+const menuButton = document.querySelector(".menu-toggle");
+
+const blueprintMenu = document.querySelector(".field-menu");
+
+menuButton.addEventListener("click", () => {
+
+    blueprintMenu.classList.toggle("open");
+
+});
+
+
+/* ==========================================================
+   DRAG POSTCARDS
+========================================================== */
+
+let activeCard = null;
+
+let highestZ = 1;
+
+document.addEventListener("mousemove", (event) => {
+
+    if (!activeCard) return;
+
+    activeCard.style.left = `${event.clientX}px`;
+
+    activeCard.style.top = `${event.clientY}px`;
+
+});
+
+document.addEventListener("mouseup", () => {
+
+    activeCard = null;
 
 });
