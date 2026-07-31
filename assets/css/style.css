@@ -241,16 +241,14 @@ img{
 
 .field-kit{
 
-    position:fixed;
+    position: fixed;
 
-    top:30px;
-    left:50%;
+    left: 1400px;
+    top: 345px;
 
-    transform:translateX(-50%);
+    width: min(92vw,300px);
 
-    width:min(92vw,300px);
-
-    z-index:1000;
+    z-index: 1000;
 
 }
 
@@ -353,9 +351,39 @@ img{
 
 }
 
+.coming-soon{
+
+    display:block;
+
+    margin-bottom:14px;
+
+    color:#753d3d;
+
+    letter-spacing:.06em;
+
+    opacity:.55;
+
+    cursor:default;
+
+    pointer-events:none;
+
+}
+
+.coming-soon small{
+
+    margin-left:.45rem;
+
+    font-size:.72rem;
+
+    font-style:italic;
+
+    opacity:.8;
+
+}
+
 .field-menu a:hover{
 
-    color:#6F89A8;
+    color:#753d3d;
 
 }
 
@@ -745,7 +773,7 @@ img{
 
 .about-page{
 
-    background:#A6AD9A;
+    background:#6e7768;
 
     color:var(--text);
 
@@ -774,28 +802,52 @@ img{
 }
 
 
-.about-photo{
+.about-image{
 
-    float:right;
-
-    width:200px;
-
-    margin:
-        .35rem
-        0
-        2rem
-        2rem;
-
-}
-
-
-.about-photo img{
+    position:relative;
 
     display:block;
 
-    width:100%;
-
     height:auto;
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,.12);
+
+}
+
+    .image-life{
+
+    width:120px;
+
+    left:18px;
+
+    top:0;
+
+    z-index:3;
+
+}    
+
+.image-steps{
+
+    width:120px;
+
+    left:150px;
+
+    top: -100px;
+
+    z-index:1;
+
+}
+
+.image-studio{
+
+    width:120px;
+
+    left:46px;
+
+    top:-90px;
+
+    z-index:2;
 
 }
 
@@ -808,38 +860,59 @@ img{
 
     max-width:860px;
 
-    margin:0 auto 140px;
+    margin: -169px 0 140px 228px;
 
 }
 
 
 .writing h2{
 
-    margin:
-        0
-        0
-        1.5rem;
+    position:relative;
 
-    text-align:right;
+    margin:0 0 2rem;
 
-    font-size:2rem;
+    left:-40px;
 
-    font-weight:500;
+    top:-90px;
 
-    letter-spacing:-.01em;
+    width:900px;
+
+    white-space:nowrap;
+
+    font-family:"Arial Black", Arial, Helvetica, sans-serif;
+
+    font-size:4rem;
+
+    font-weight:900;
+
+    line-height:.9;
+
+    letter-spacing:-.04em;
+
+    text-transform:lowercase;
+
+    color:#414838;
+
+    z-index:10;
 
 }
 
 
 .writing p{
 
+    position:relative;
+
+    top:-55px;
+
     margin-bottom:1.5rem;
 
-    text-align:right;
+    text-align:left;
 
     line-height:1.55;
 
     font-size:1.05rem;
+
+    color:#524741;
 
 }
 

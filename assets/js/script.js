@@ -114,6 +114,12 @@ function buildStudio(works) {
 
     activeCard.style.zIndex = highestZ;
 
+    const rect = activeCard.getBoundingClientRect();
+
+cardOffsetX = event.clientX - rect.left;
+
+cardOffsetY = event.clientY - rect.top;
+
 });
 
     });
@@ -181,8 +187,6 @@ document.addEventListener("mousemove", (event) => {
 
     fieldKit.style.top = `${event.clientY - offsetY}px`;
 
-    fieldKit.style.transform = "rotate(0deg)";
-
 });
 
 document.addEventListener("mouseup", () => {
@@ -217,13 +221,17 @@ let activeCard = null;
 
 let highestZ = 1;
 
+let cardOffsetX = 0;
+
+let cardOffsetY = 0;
+
 document.addEventListener("mousemove", (event) => {
 
     if (!activeCard) return;
 
-    activeCard.style.left = `${event.clientX}px`;
+    activeCard.style.left = `${event.clientX - cardOffsetX}px`;
 
-    activeCard.style.top = `${event.clientY}px`;
+    activeCard.style.top = `${event.clientY - cardOffsetY}px`;
 
 });
 
@@ -232,3 +240,41 @@ document.addEventListener("mouseup", () => {
     activeCard = null;
 
 });
+
+const fieldSearch = document.querySelector(".field-search");
+
+if (fieldSearch) {
+
+    fieldSearch.addEventListener("keydown", (event) => {
+
+        if (event.key !== "Enter") return;
+
+        const query = fieldSearch.value.trim().toLowerCase();
+
+switch (query) {
+
+    case "home":
+        window.location.href = "index.html";
+        break;
+
+    case "about":
+        window.location.href = "about/";
+        break;
+
+    case "instagram":
+        window.open("https://www.instagram.com/ilycialavertydesign/", "_blank");
+        break;
+
+    case "linkedin":
+        window.open("https://www.linkedin.com/in/ilycialaverty/", "_blank");
+        break;
+
+    case "pinterest":
+        window.open("https://pin.it/41OaXi8pF", "_blank");
+        break;
+
+}
+
+    });
+
+}
