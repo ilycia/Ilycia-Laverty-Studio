@@ -1,17 +1,28 @@
 /* ==========================================================
-   ILYCIA LAVERTY
-   STUDIO 1.1
 
-   The Living Table
+   ILYCIA LAVERTY STUDIO
 
-   Living Studio
-   Architecture
-   Art
-   Research
-   Process
+   style.css
+   Version 1.2
+
+   A living stylesheet for the Studio.
+
+   The structure of this file follows the visitor's
+   journey through the website.
 
 ========================================================== */
 
+/* ==========================================================
+
+   Principles
+
+   • One section, one responsibility.
+   • Every object has its own identity.
+   • Position through composition, not hacks.
+   • Keep the stylesheet readable.
+   • Remove what is no longer used.
+
+========================================================== */
 
 /* ==========================================================
    RESET
@@ -27,9 +38,11 @@
 
 }
 
-
 /* ==========================================================
    ROOT
+
+   Studio colour palette and shared variables.
+   Used throughout the Studio for consistency.
 ========================================================== */
 
 :root{
@@ -52,7 +65,6 @@
         .28s ease;
 
 }
-
 
 /* ==========================================================
    DOCUMENT
@@ -87,7 +99,6 @@ body{
 
 }
 
-
 /* ==========================================================
    LINKS
 ========================================================== */
@@ -99,7 +110,6 @@ a{
     text-decoration:none;
 
 }
-
 
 /* ==========================================================
    IMAGES
@@ -113,9 +123,12 @@ img{
 
 }
 
-
 /* ==========================================================
-   STUDIO
+   HOME
+
+   The Studio homepage.
+
+   Houses the tabletop, hero and draggable postcards.
 ========================================================== */
 
 .studio{
@@ -133,6 +146,8 @@ img{
 
 /* ==========================================================
    HERO
+
+   Studio introduction displayed above the tabletop.
 ========================================================== */
 
 .hero{
@@ -155,11 +170,6 @@ img{
 
 }
 
-
-/* ----------------------------------------------------------
-   Studio Introduction
----------------------------------------------------------- */
-
 .hero-tagline{
 
     margin-top:40px;
@@ -175,7 +185,6 @@ img{
     color:rgba(40,21,6,.56);
 
 }
-
 
 .hero-title{
 
@@ -196,6 +205,8 @@ img{
 
 /* ==========================================================
    STUDIO TABLE
+
+   The tabletop that holds the Studio objects.
 ========================================================== */
 
 .studio-table{
@@ -205,7 +216,6 @@ img{
     inset:0;
 
 }
-
 
 .tabletop{
 
@@ -220,6 +230,8 @@ img{
 
 /* ==========================================================
    WORKS
+
+   Container for all draggable Studio postcards.
 ========================================================== */
 
 .works{
@@ -234,21 +246,23 @@ img{
 
 }
 
-
 /* ==========================================================
-   FIELD KIT 2.0
+   FIELD KIT
+
+   Persistent Studio navigation.
+   Appears on every page and can be repositioned by the user.
 ========================================================== */
 
 .field-kit{
 
-    position: fixed;
+    position:fixed;
 
-    left: 1400px;
-    top: 345px;
+    top:285px;
+    right:1370px;
 
-    width: min(92vw,300px);
+    width:290px;
 
-    z-index: 1000;
+    z-index:1000;
 
 }
 
@@ -260,8 +274,6 @@ img{
 
     height:auto;
 
-    opacity:.95;
-
     pointer-events:none;
 
 }
@@ -270,11 +282,11 @@ img{
 
     position:absolute;
 
-    left:0;
     top:0;
+    left:0;
 
-    width:70px;
-    height:70px;
+    width:68px;
+    height:68px;
 
     z-index:20;
 
@@ -284,23 +296,28 @@ img{
 
     position:absolute;
 
-    left:34px;
-    top:8px;
+    top:15px;
+    left:32px;
 
-    width:140px;
-    height:36px;
+    width:145px;
 
     border:none;
-    background:none;
+
+    background:transparent;
+
     outline:none;
 
+    color:#d2cdc4;
+
     font:inherit;
-    font-size:0.75rem;
+
+    font-size:.85rem;
+
+}
+
+.field-search::placeholder{
 
     color:#d2cdc4;
-    caret-color:#d2cdc4;
-
-    z-index:20;
 
 }
 
@@ -308,18 +325,17 @@ img{
 
     position:absolute;
 
-    right:10px;
-    top:5px;
+    top:4px;
+    right:6px;
 
-    width:70px;
-    height:70px;
+    width:68px;
+    height:68px;
 
     border:none;
+
     background:transparent;
 
     cursor:pointer;
-
-    z-index:20;
 
 }
 
@@ -329,61 +345,11 @@ img{
 
     position:absolute;
 
-    top:145px;
+    top:86px;
 
-    right:70px;
+    right:8px;
 
-}
-
-.field-menu a{
-
-    display:block;
-
-    margin-bottom:14px;
-
-    text-decoration:none;
-
-    color:#2F343A;
-
-    font-size:.95rem;
-
-    letter-spacing:.06em;
-
-}
-
-.coming-soon{
-
-    display:block;
-
-    margin-bottom:14px;
-
-    color:#753d3d;
-
-    letter-spacing:.06em;
-
-    opacity:.55;
-
-    cursor:default;
-
-    pointer-events:none;
-
-}
-
-.coming-soon small{
-
-    margin-left:.45rem;
-
-    font-size:.72rem;
-
-    font-style:italic;
-
-    opacity:.8;
-
-}
-
-.field-menu a:hover{
-
-    color:#753d3d;
+    text-align:right;
 
 }
 
@@ -393,9 +359,47 @@ img{
 
 }
 
+.field-menu a{
+
+    display:block;
+
+    margin-bottom:14px;
+
+    color:#2F343A;
+
+    text-decoration:none;
+
+    font:inherit;
+
+    letter-spacing:.04em;
+
+}
+
+.contact-email{
+
+    display:block;
+
+    margin:28px 0 22px;
+
+    color:#2F343A;
+
+    font:inherit;
+
+    letter-spacing:.04em;
+
+}
+
+.field-menu a:hover{
+
+    color:#753d3d;
+
+}
 
 /* ==========================================================
-   POSTCARDS
+   STUDIO POSTCARDS
+
+   Interactive project cards displayed on the homepage.
+   Each postcard is independently draggable.
 ========================================================== */
 
 .work-card{
@@ -419,50 +423,10 @@ img{
 
 }
 
-
-/* ----------------------------------------------------------
-   Hover
----------------------------------------------------------- */
-
-.work-card:hover{
-
-    box-shadow:
-        0 14px 34px rgba(0,0,0,.14);
-
-}
-
-
-/* ----------------------------------------------------------
-   Active postcard
-
-   This class will be controlled by script.js.
----------------------------------------------------------- */
-
-.work-card.active{
-
-    z-index:999;
-
-    box-shadow:
-        0 22px 52px rgba(0,0,0,.18);
-
-}
-
-
-/* ----------------------------------------------------------
-   Dragging
----------------------------------------------------------- */
-
-.work-card.dragging{
-
-    cursor:grabbing;
-
-    transition:none;
-
-}
-
-
 /* ==========================================================
    PAGE LAYOUT
+
+   Shared typography and spacing used across the Studio.
 ========================================================== */
 
 .page{
@@ -478,576 +442,339 @@ img{
 
 }
 
+/* ==========================================================
+   STUDIO TITLES
 
-.page h1{
+   Shared titles for the main Studio sections.
+========================================================== */
+
+.studio-title{
+
+    font-size:5.2rem;
+
+    font-weight:700;
+
+    line-height:.95;
+
+    letter-spacing:-.02em;
+
+    color:rgba(40,21,6,.42);
 
     margin-bottom:2.5rem;
 
-    font-size:3.5rem;
-
-    font-weight:500;
-
-    line-height:1.05;
-
-    letter-spacing:-.02em;
-
-    color:var(--text);
-
 }
-
-
-.page p{
-
-    max-width:760px;
-
-    margin-bottom:1.6rem;
-
-    line-height:1.85;
-
-    font-size:1.04rem;
-
-    color:var(--text);
-
-}
-
 
 /* ==========================================================
    ARCHITECTURE
+
+   Curated introduction to the Architecture section.
+
+   Featured projects are independently positioned and may
+   evolve as the Studio grows.
 ========================================================== */
 
-.architecture-grid{
+.architecture-page{
 
-    display:grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(320px,1fr));
-
-    gap:2.5rem;
-
-    align-items:start;
+    background:#e7dbca;
 
 }
 
+.project-bfd h2,
+.project-aio h2{
 
-/* ==========================================================
-   ART
-========================================================== */
-
-.art-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(300px,1fr));
-
-    gap:2.5rem;
+    color:#2F343A;
 
 }
 
+.project-bfd p,
+.project-aio p{
 
-/* ----------------------------------------------------------
-   Artwork Card
----------------------------------------------------------- */
-
-.artwork{
-
-    overflow:hidden;
-
-    border-radius:14px;
-
-    background:white;
-
-    box-shadow:
-        0 10px 28px rgba(0,0,0,.08);
-
-    transition:
-        transform .28s ease,
-        box-shadow .28s ease;
+    color:#4A4F55;
 
 }
 
+.architecture-introduction{
 
-.artwork:hover{
+    max-width:720px;
 
-    transform:translateY(-6px);
-
-    box-shadow:
-        0 20px 42px rgba(0,0,0,.12);
+    margin:60px auto 120px;
 
 }
 
+.architecture-introduction p{
 
-.artwork img{
+    max-width:620px;
 
-    width:100%;
-
-    display:block;
-
-}
-
-
-/* ==========================================================
-   ABOUT
-========================================================== */
-
-.about{
-
-    max-width:760px;
-
-    margin:0 auto;
+    line-height:1.8;
 
 }
 
-
-.about p{
-
-    margin-bottom:2rem;
-
-    line-height:1.9;
-
-    font-size:1.05rem;
-
-}
-
-
-.about h2{
-
-    margin:
-        4rem
-        0
-        1.5rem;
-
-    font-size:2rem;
-
-    font-weight:500;
-
-    letter-spacing:-.01em;
-
-}
-
-
-/* ==========================================================
-   PROCESS
-========================================================== */
-
-.process{
-
-    max-width:900px;
-
-    margin:0 auto;
-
-}
-
-
-.process p{
-
-    margin-bottom:2rem;
-
-    line-height:1.85;
-
-}
-
-
-.process h2{
-
-    margin:
-        3.5rem
-        0
-        1.5rem;
-
-    font-size:2rem;
-
-    font-weight:500;
-
-}
-
-
-/* ==========================================================
-   UTILITIES
-========================================================== */
-
-.hidden{
-
-    display:none !important;
-
-}
-
-
-.center{
-
-    text-align:center;
-
-}
-
-
-.full-width{
-
-    width:100%;
-
-}
-
-
-.fade{
-
-    opacity:.75;
-
-}
-
-
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-
-@media (max-width:1200px){
-
-    .work-card{
-
-        width:205px;
-
-    }
-
-}
-
-
-@media (max-width:900px){
-
-    .page{
-
-        padding:
-            120px
-            40px
-            80px;
-
-    }
-
-    .hero-title{
-
-        font-size:3rem;
-
-    }
-
-}
-
-
-@media (max-width:700px){
-
-    body{
-
-        overflow:auto;
-
-    }
-
-    .page{
-
-        padding:
-            100px
-            24px
-            70px;
-
-    }
-
-    .hero-title{
-
-        font-size:2.3rem;
-
-    }
-
-    .hero-tagline{
-
-        font-size:.82rem;
-
-    }
-
-    .work-card{
-
-        width:170px;
-
-    }
-
-}
-
-
-/* ==========================================================
-   ABOUT PAGE
-========================================================== */
-
-.about-page{
-
-    background:#6e7768;
-
-    color:var(--text);
-
-}
-
-
-/* ----------------------------------------------------------
-   Introduction
----------------------------------------------------------- */
-
-.page-title{
-
-    max-width:900px;
-
-    margin:
-        80px
-        auto
-        3rem;
-
-    font-size:clamp(2.8rem,6vw,4rem);
-
-    font-weight:500;
-
-    letter-spacing:-.02em;
-
-}
-
-
-.about-image{
+.architecture-wall{
 
     position:relative;
 
+    width:100%;
+
+    min-height:1800px;
+
+}
+
+.project-bfd,
+.project-aio{
+
+    position:absolute;
+
     display:block;
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+.project-bfd{
+
+    width:280px;
+
+    left:10%;
+
+    top:220px;
+
+}
+
+.project-aio{
+
+    width:360px;
+
+    right:12%;
+
+    top:120px;
+
+}
+
+.project-three{
+
+}
+
+.project-four{
+
+}
+
+.project-five{
+
+}
+
+.project-six{
+
+}
+
+.project-bfd img,
+.project-aio img{
+
+    width:100%;
 
     height:auto;
 
-    box-shadow:
-        0 10px 24px rgba(0,0,0,.12);
-
-}
-
-    .image-life{
-
-    width:120px;
-
-    left:18px;
-
-    top:0;
-
-    z-index:3;
-
-}    
-
-.image-steps{
-
-    width:120px;
-
-    left:150px;
-
-    top: -100px;
-
-    z-index:1;
-
-}
-
-.image-studio{
-
-    width:120px;
-
-    left:46px;
-
-    top:-90px;
-
-    z-index:2;
-
-}
-
-
-/* ----------------------------------------------------------
-   Writing
----------------------------------------------------------- */
-
-.writing{
-
-    max-width:860px;
-
-    margin: -169px 0 140px 228px;
-
-}
-
-
-.writing h2{
-
-    position:relative;
-
-    margin:0 0 2rem;
-
-    left:-40px;
-
-    top:-90px;
-
-    width:900px;
-
-    white-space:nowrap;
-
-    font-family:"Arial Black", Arial, Helvetica, sans-serif;
-
-    font-size:4rem;
-
-    font-weight:900;
-
-    line-height:.9;
-
-    letter-spacing:-.04em;
-
-    text-transform:lowercase;
-
-    color:#414838;
-
-    z-index:10;
-
-}
-
-
-.writing p{
-
-    position:relative;
-
-    top:-55px;
-
-    margin-bottom:1.5rem;
-
-    text-align:left;
-
-    line-height:1.55;
-
-    font-size:1.05rem;
-
-    color:#524741;
-
-}
-
-
-.writing::after{
-
-    content:"";
-
     display:block;
 
-    clear:both;
+    box-shadow:
+        0 16px 40px rgba(0,0,0,.12);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 
 }
 
-/* ==========================================================
-   ART PAGE
-========================================================== */
+.project-bfd:hover img,
+.project-aio:hover img{
 
-.art-page{
-
-    position:relative;
-
-    min-height:100vh;
-
-    overflow:visible;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #F4EFE6 0%,
-            #F4EFE6 25%,
-            #A7A58F 25%,
-            #A7A58F 100%
-        );
-
-}
-
-.art-page::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-
-    top:25%;
-
-    height:18px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #ECE4D8 0,
-            #D7CCBD 30%,
-            #C9BCAB 70%,
-            #B7AA98 100%
-        );
+    transform:scale(1.01);
 
     box-shadow:
-        0 2px 3px rgba(0,0,0,.12);
-
-    z-index:1;
+        0 24px 60px rgba(0,0,0,.16);
 
 }
 
+.project-bfd h2,
+.project-aio h2{
 
-.gallery{
+    margin-top:1.4rem;
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:140px;
+    margin-bottom:.45rem;
 
 }
 
+.project-bfd p,
+.project-aio p{
 
-.artwork{
+    margin:0;
 
-    max-width:900px;
-
-    margin:0 auto;
+    line-height:1.6;
 
 }
 
 /* ==========================================================
-   COLLECTION
+   GALLERY WALL (ART HOME PAGE)
+
+   Curated introduction to the Art section.
+
+   Three featured works hang independently and may be
+   changed over time without altering the layout.
 ========================================================== */
 
-.collection-page{
-
-    background:var(--paper);
-
-    min-height:100vh;
-
-}
-
-
-.collection{
+.gallery-wall{
 
     position:relative;
 
-    min-height:1700px;
+    width:100%;
 
-    margin:5rem 8vw 8rem;
+    height:900px;
+
+    margin:120px auto 0;
 
 }
 
-
-.collection-piece{
+.gallery-wall a{
 
     position:absolute;
 
     display:block;
 
-    transition:transform .25s ease;
+    transition:transform .35s ease;
 
 }
 
-
-.collection-piece:hover{
+.gallery-wall a:hover{
 
     transform:scale(1.02);
 
 }
 
-
-.collection-piece img{
+.gallery-wall img{
 
     display:block;
 
     width:100%;
 
     height:auto;
+
+    box-shadow:
+        0 16px 40px rgba(0,0,0,.12);
+
+}
+
+/* ==========================================================
+   EXHIBITION
+
+   Immersive viewing space.
+
+   Artwork size and spacing are controlled here,
+   independent from the Gallery and Collection.
+========================================================== */
+
+.art-page{
+
+    background:#baa683;
+
+    overflow-y:auto;
+
+}
+
+.exhibition{
+
+    position:relative;
+
+    max-width:1400px;
+
+    height:1700px;
+
+    margin:0 auto;
+
+}
+
+.exhibition-works{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+}
+
+.exhibition-works a{
+
+    position:absolute;
+
+    display:block;
+
+    text-decoration:none;
+
+}
+
+.exhibition-works img{
+
+    display:block;
+
+    width:30%;
+
+    height:auto;
+
+    box-shadow:
+
+        0 16px 40px rgba(0,0,0,.10);
+
+    transition:
+
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.exhibition-works img:hover{
+
+    transform:scale(1.01);
+
+    box-shadow:
+
+        0 24px 60px rgba(0,0,0,.16);
+
+}
+
+.collection-link{
+
+    margin:
+
+        220px
+        0
+        120px;
+
+    text-align:center;
+
+}
+
+.collection-link a{
+
+    font-size:1.2rem;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    opacity:.65;
+
+    transition:opacity .3s ease;
+
+}
+
+.collection-link a:hover{
+
+    opacity:1;
 
 }
 
@@ -1123,46 +850,46 @@ img{
 
 
 /* ==========================================================
-   EXHIBITION
+   COLLECTION LAYOUT
+
+   Position and scale of every artwork within the Collection.
 ========================================================== */
 
-.art-page{
+.collection-page{
 
-    background:#5b5140;
+    background:var(--paper);
 
-    overflow-y:auto;
-
-}
-
-
-.exhibition{
-
-    max-width:1400px;
+    min-height:100vh;
 
 }
 
+.collection{
 
-.exhibition-works{
+    position:relative;
 
-    display:flex;
+    min-height:1700px;
 
-    flex-direction:column;
-
-    gap:220px;
+    margin:5rem 8vw 8rem;
 
 }
 
+.collection-piece{
 
-.exhibition-works a{
+    position:absolute;
 
     display:block;
 
-    text-decoration:none;
+    transition:transform .25s ease;
 
 }
 
+.collection-piece:hover{
 
-.exhibition-works img{
+    transform:scale(1.02);
+
+}
+
+.collection-piece img{
 
     display:block;
 
@@ -1170,68 +897,525 @@ img{
 
     height:auto;
 
+}
+
+/* ==========================================================
+   ART
+========================================================== */
+
+.artwork:hover{
+
+    transform:translateY(-6px);
+
     box-shadow:
-
-        0 16px 40px rgba(0,0,0,.10);
-
-    transition:
-
-        transform .35s ease,
-        box-shadow .35s ease;
+        0 20px 42px rgba(0,0,0,.12);
 
 }
 
+.artwork img{
 
-.exhibition-works img:hover{
+    width:100%;
 
-    transform:scale(1.01);
-
-    box-shadow:
-
-        0 24px 60px rgba(0,0,0,.16);
+    display:block;
 
 }
 
+/* ==========================================================
+   ABOUT
+========================================================== */
 
-.collection-link{
+.about{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+}
+
+.about p{
+
+    margin-bottom:2rem;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+.about h2{
 
     margin:
-
-        220px
+        4rem
         0
-        120px;
+        1.5rem;
+
+    font-size:2rem;
+
+    font-weight:500;
+
+    letter-spacing:-.01em;
+
+}
+
+/* ==========================================================
+   PROCESS
+========================================================== */
+
+.process{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.process p{
+
+    margin-bottom:2rem;
+
+    line-height:1.85;
+
+}
+
+.process h2{
+
+    margin:
+        3.5rem
+        0
+        1.5rem;
+
+    font-size:2rem;
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+
+   Studio-wide responsive behaviour.
+========================================================== */
+
+@media (max-width:1200px){
+
+    .work-card{
+
+        width:205px;
+
+    }
+
+    .gallery-centre{
+
+        left:34%;
+
+    }
+
+}
+
+@media (max-width:900px){
+
+    .page{
+
+        padding:100px 40px 80px;
+
+    }
+
+    .studio-title{
+
+        font-size:4rem;
+
+    }
+
+    .hero-title{
+
+        font-size:6rem;
+
+    }
+
+    .hero-tagline{
+
+        font-size:3rem;
+
+    }
+
+    .architecture-wall{
+
+        min-height:auto;
+
+    }
+
+    .project-bfd,
+    .project-aio{
+
+        position:relative;
+
+        top:auto;
+        left:auto;
+        right:auto;
+
+        width:100%;
+
+        max-width:520px;
+
+        margin:0 auto 100px;
+
+    }
+
+}
+
+@media (max-width:700px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .page{
+
+        padding:80px 24px 60px;
+
+    }
+
+    .studio-title{
+
+        font-size:3rem;
+
+    }
+
+    .hero-title{
+
+        font-size:4rem;
+
+    }
+
+    .hero-tagline{
+
+        font-size:2rem;
+
+    }
+
+    .work-card{
+
+        width:170px;
+
+    }
+
+    .gallery-wall{
+
+        height:auto;
+
+    }
+
+    .gallery-wall a{
+
+        position:relative;
+
+        display:block;
+
+        width:100%;
+
+        max-width:320px;
+
+        margin:0 auto 60px;
+
+        left:auto;
+        right:auto;
+        top:auto;
+    }
+
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.work-card:hover{
+
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.14);
+
+}
+
+/* ==========================================================
+   ACTIVE POSTCARDS
+
+   This class will be controlled by script.js.
+========================================================== */
+
+.work-card.active{
+
+    z-index:999;
+
+    box-shadow:
+        0 22px 52px rgba(0,0,0,.18);
+
+}
+
+/* ==========================================================
+   DRAGGING
+========================================================== */
+
+.work-card.dragging{
+
+    cursor:grabbing;
+
+    transition:none;
+
+}
+
+.page h1{
+
+    margin-bottom:2.5rem;
+
+    font-size:3.5rem;
+
+    font-weight:500;
+
+    line-height:1.05;
+
+    letter-spacing:-.02em;
+
+    color:var(--text);
+
+}
+
+.page p{
+
+    max-width:760px;
+
+    margin-bottom:1.6rem;
+
+    line-height:1.85;
+
+    font-size:1.04rem;
+
+    color:var(--text);
+
+}
+
+/* ==========================================================
+   UTILITIES
+========================================================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.center{
 
     text-align:center;
 
 }
 
+.full-width{
 
-.collection-link a{
-
-    font-size:1.2rem;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
-
-    color:var(--text);
-
-    text-decoration:none;
-
-    opacity:.65;
-
-    transition:opacity .3s ease;
+    width:100%;
 
 }
 
-.collection-link a:hover{
+.fade{
 
-    opacity:1;
+    opacity:.75;
 
 }
 
 /* ==========================================================
-   ARTWORK
+   ABOUT PAGE
+========================================================== */
+
+.about-page{
+
+    background:#6e7768;
+
+    color:var(--text);
+
+}
+
+/* ==========================================================
+   INTRODUCTION
+========================================================== */
+
+.page-title{
+
+    max-width:900px;
+
+    margin:
+        80px
+        auto
+        3rem;
+
+    font-size:clamp(2.8rem,6vw,4rem);
+
+    font-weight:500;
+
+    letter-spacing:-.02em;
+
+}
+
+.about-image{
+
+    position:relative;
+
+    display:block;
+
+    height:auto;
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,.12);
+
+}
+
+    .image-life{
+
+    width:120px;
+
+    left:18px;
+
+    top:0;
+
+    z-index:3;
+
+}    
+
+.image-steps{
+
+    width:120px;
+
+    left:150px;
+
+    top: -100px;
+
+    z-index:1;
+
+}
+
+.image-studio{
+
+    width:120px;
+
+    left:46px;
+
+    top:-90px;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   WRITING
+========================================================== */
+
+.writing{
+
+    max-width:860px;
+
+    margin: -169px 0 140px 228px;
+
+}
+
+.writing h2{
+
+    position:relative;
+
+    margin:0 0 2rem;
+
+    left:-40px;
+
+    top:-90px;
+
+    width:900px;
+
+    white-space:nowrap;
+
+    font-family:"Arial Black", Arial, Helvetica, sans-serif;
+
+    font-size:4rem;
+
+    font-weight:900;
+
+    line-height:.9;
+
+    letter-spacing:-.04em;
+
+    text-transform:lowercase;
+
+    color:#414838;
+
+    z-index:10;
+
+}
+
+.writing p{
+
+    position:relative;
+
+    top:-55px;
+
+    margin-bottom:1.5rem;
+
+    text-align:left;
+
+    line-height:1.55;
+
+    font-size:1.05rem;
+
+    color:#524741;
+
+}
+
+.writing::after{
+
+    content:"";
+
+    display:block;
+
+    clear:both;
+
+}
+
+/* ==========================================================
+   FEATURED WORKS
+========================================================== */
+
+.gallery-left{
+
+    width:240px;
+
+    left:8%;
+
+    top:170px;
+
+}
+
+.gallery-centre{
+
+    width:340px;
+
+    left:37%;
+
+    top:90px;
+
+}
+
+.gallery-right{
+
+    width:240px;
+
+    right:8%;
+
+    top:200px;
+
+}
+
+/* ==========================================================
+   ARTWORK PAGE
+
+   Individual artwork pages.
+
+   Shared layout for every work in the Collection.
 ========================================================== */
 
 .artwork-page{
@@ -1311,52 +1495,5 @@ img{
     margin-top:2rem;
 
     line-height:1.8;
-
-}
-
-
-/*------------------------------------*\
-  Architecture
-\*------------------------------------*/
-
-.architecture-page{
-
-    max-width:1200px;
-    margin:0 auto;
-    padding:160px 80px;
-
-}
-
-.architecture-project{
-
-    display:block;
-
-    margin-bottom:180px;
-
-    text-decoration:none;
-
-    color:inherit;
-
-}
-
-.architecture-project img{
-
-    width:100%;
-
-    display:block;
-
-    margin-bottom:2rem;
-
-}
-
-.architecture-project h2{
-
-    margin-bottom:.5rem;
-
-}
-
-.architecture-project p{
-
-    color:#666;
 
 }
