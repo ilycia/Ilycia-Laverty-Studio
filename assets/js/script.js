@@ -154,66 +154,6 @@ loadStudio();
 
 
 /* ==========================================================
-   DRAG FIELD KIT
-========================================================== */
-
-const fieldKit = document.querySelector(".field-kit");
-
-let dragging = false;
-
-let offsetX = 0;
-
-let offsetY = 0;
-
-fieldKit.addEventListener("mousedown", (event) => {
-
-    dragging = true;
-
-    fieldKit.classList.add("dragging");
-
-    const rect = fieldKit.getBoundingClientRect();
-
-    offsetX = event.clientX - rect.left;
-
-    offsetY = event.clientY - rect.top;
-
-});
-
-document.addEventListener("mousemove", (event) => {
-
-    if (!dragging) return;
-
-    fieldKit.style.left = `${event.clientX - offsetX}px`;
-
-    fieldKit.style.top = `${event.clientY - offsetY}px`;
-
-});
-
-document.addEventListener("mouseup", () => {
-
-    dragging = false;
-
-    fieldKit.classList.remove("dragging");
-
-});
-
-
-/* ==========================================================
-   BLUEPRINT MENU
-========================================================== */
-
-const menuButton = document.querySelector(".menu-toggle");
-
-const blueprintMenu = document.querySelector(".field-menu");
-
-menuButton.addEventListener("click", () => {
-
-    blueprintMenu.classList.toggle("open");
-
-});
-
-
-/* ==========================================================
    DRAG POSTCARDS
 ========================================================== */
 
@@ -240,6 +180,69 @@ document.addEventListener("mouseup", () => {
     activeCard = null;
 
 });
+
+/* ==========================================================
+   DRAG FIELD KIT
+========================================================== */
+
+const fieldKit = document.querySelector(".field-kit");
+
+if (fieldKit) {
+
+    let dragging = false;
+
+    let offsetX = 0;
+    let offsetY = 0;
+
+    fieldKit.addEventListener("mousedown", (event) => {
+
+        dragging = true;
+
+        fieldKit.classList.add("dragging");
+
+        const rect = fieldKit.getBoundingClientRect();
+
+        offsetX = event.clientX - rect.left;
+        offsetY = event.clientY - rect.top;
+
+    });
+
+    document.addEventListener("mousemove", (event) => {
+
+        if (!dragging) return;
+
+        fieldKit.style.left = `${event.clientX - offsetX}px`;
+        fieldKit.style.top = `${event.clientY - offsetY}px`;
+
+    });
+
+    document.addEventListener("mouseup", () => {
+
+        dragging = false;
+
+        fieldKit.classList.remove("dragging");
+
+    });
+
+}
+
+/* ==========================================================
+   BLUEPRINT MENU
+========================================================== */
+
+const menuButton = document.querySelector(".menu-toggle");
+
+const blueprintMenu = document.querySelector(".field-menu");
+
+if (menuButton && blueprintMenu) {
+
+    menuButton.addEventListener("click", () => {
+
+        blueprintMenu.classList.toggle("open");
+
+    });
+
+}
 
 const fieldSearch = document.querySelector(".field-search");
 
