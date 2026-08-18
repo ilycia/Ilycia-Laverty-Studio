@@ -475,12 +475,28 @@ img{
 
 .architecture-page{
 
-    background:#e7dbca;
+    background:#cdc8bb;
+
+    color:#2F343A;
+
+}
+
+.architecture-page .studio-title{
+
+    color:#2f343ad7;
 
 }
 
 .project-bfd h2,
 .project-aio h2{
+
+    margin-top:1rem;
+    margin-bottom:.15rem;
+
+    font-size:1.2rem;
+    font-weight:400;
+    line-height:1;
+    letter-spacing:-.02em;
 
     color:#2F343A;
 
@@ -489,7 +505,13 @@ img{
 .project-bfd p,
 .project-aio p{
 
-    color:#4A4F55;
+    margin:0;
+
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.25;
+
+    color:#5B6065;
 
 }
 
@@ -497,15 +519,19 @@ img{
 
     max-width:720px;
 
-    margin:60px auto 120px;
+    margin:0 auto 120px;
+
+    text-align:center;
 
 }
 
 .architecture-introduction p{
 
-    max-width:620px;
+    max-width:1000px;
 
     line-height:1.8;
+
+    color:#2F343A;
 
 }
 
@@ -536,9 +562,9 @@ img{
 
     width:280px;
 
-    left:10%;
+    left:30%;
 
-    top:220px;
+    top:5px;
 
 }
 
@@ -546,9 +572,9 @@ img{
 
     width:360px;
 
-    right:12%;
+    right:29%;
 
-    top:120px;
+    top:70px;
 
 }
 
@@ -675,7 +701,7 @@ img{
 
 .art-page{
 
-    background:#baa683;
+    background:#c0b6a6;
 
     overflow-y:auto;
 
