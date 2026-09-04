@@ -278,18 +278,13 @@ img{
 
 }
 
-.maker-mark-link{
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:68px;
-    height:68px;
-
-    z-index:20;
-
+.maker-mark-link {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 40px;
+    height: 40px;
+    z-index: 20;
 }
 
 .field-search{
@@ -299,7 +294,7 @@ img{
     top:15px;
     left:32px;
 
-    width:145px;
+    width:345px;
 
     border:none;
 
@@ -307,11 +302,13 @@ img{
 
     outline:none;
 
+    cursor:text;
+
     color:#d2cdc4;
 
     font:inherit;
 
-    font-size:.85rem;
+    font-size:.55rem;
 
 }
 
@@ -321,22 +318,21 @@ img{
 
 }
 
-.menu-toggle{
+.field-intro {
+    font-size: 14px;
+    line-height: 1.2;
+    max-width: 320px;
+}
 
-    position:absolute;
-
-    top:4px;
-    right:6px;
-
-    width:68px;
-    height:68px;
-
-    border:none;
-
-    background:transparent;
-
-    cursor:pointer;
-
+.menu-toggle {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .field-menu{
@@ -517,7 +513,7 @@ img{
 
 .architecture-introduction{
 
-    max-width:720px;
+    max-width:550px;
 
     margin:0 auto 120px;
 
