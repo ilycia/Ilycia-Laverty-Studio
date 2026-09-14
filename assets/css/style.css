@@ -649,11 +649,11 @@ img{
 
     position:relative;
 
-    width:100%;
+    width:60%;
 
     height:900px;
 
-    margin:120px auto 0;
+    margin:40px auto 0;
 
 }
 
@@ -680,9 +680,6 @@ img{
     width:100%;
 
     height:auto;
-
-    box-shadow:
-        0 16px 40px rgba(0,0,0,.12);
 
 }
 
