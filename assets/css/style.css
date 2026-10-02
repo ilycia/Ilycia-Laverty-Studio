@@ -47,13 +47,13 @@
 
 :root{
 
-    --paper:#eae2dc;
+    --paper:#e9ddc8de;
 
-    --table:#E8E0D3;
+    --table:#5A4A3E;
 
-    --text:#998b80b3;
+    --text:#40352F;
 
-    --text-light:#6A635B;
+    --text-light:#5A4A3E;
 
     --shadow:
         0 12px 36px rgba(0,0,0,.16);
@@ -84,7 +84,7 @@ body{
     overflow-x:hidden;
     overflow-y:scroll;
 
-    background:var(--paper);
+    background:transparent;
 
     font-family:
         Helvetica,
@@ -141,6 +141,8 @@ img{
 
     overflow:hidden;
 
+    background:#f4e5cddb;
+
 }
 
 
@@ -182,7 +184,7 @@ img{
 
     text-transform:lowercase;
 
-    color:rgba(40,21,6,.56);
+    color:#cf5006be;
 
 }
 
@@ -196,9 +198,10 @@ img{
 
     line-height:.95;
 
-    letter-spacing:-.02em;
+    letter-spacing:-.01em;
 
-    color:rgba(40,21,6,.42);
+    color:#cf3806a7;
+
 
 }
 
@@ -260,7 +263,7 @@ img{
     top:285px;
     right:1370px;
 
-    width:290px;
+    width:390px;
 
     z-index:1000;
 
@@ -291,8 +294,8 @@ img{
 
     position:absolute;
 
-    top:15px;
-    left:32px;
+    top:35px;
+    left:55px;
 
     width:345px;
 
@@ -304,24 +307,31 @@ img{
 
     cursor:text;
 
-    color:#d2cdc4;
+    color:#575144;
 
     font:inherit;
 
-    font-size:.55rem;
+    font-size:.95rem;
 
+}
+
+.field-search::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .field-search::placeholder{
 
-    color:#d2cdc4;
+    color:#5d5850;
 
 }
 
 .field-intro {
-    font-size: 14px;
-    line-height: 1.2;
-    max-width: 320px;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 290px;
+    color: #908978;
+    margin-bottom: 28px;
 }
 
 .menu-toggle {
@@ -346,6 +356,11 @@ img{
     right:8px;
 
     text-align:right;
+
+    background: rgba(234, 226, 220, 0.60);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 18px 44px 10px;
 
 }
 
@@ -456,26 +471,34 @@ img{
 
     color:rgba(40,21,6,.42);
 
-    margin-bottom:2.5rem;
+    position:relative;
+    top:50px;
+
+    margin-bottom:4.5rem;
 
 }
 
 /* ==========================================================
    ARCHITECTURE
 
-   Curated introduction to the Architecture section.
-
-   Featured projects are independently positioned and may
-   evolve as the Studio grows.
+   Editorial project plate grid.
+   The grid is fixed; projects occupy the plates.
 ========================================================== */
 
 .architecture-page{
 
-    background:#cdc8bb;
+    min-height:100vh;
+
+    background:#f8d9ccdb;
 
     color:#2F343A;
 
 }
+
+
+/* ----------------------------------------------------------
+   ARCHITECTURE INTRODUCTION
+---------------------------------------------------------- */
 
 .architecture-page .studio-title{
 
@@ -483,43 +506,17 @@ img{
 
 }
 
-.project-bfd h2,
-.project-aio h2{
-
-    margin-top:1rem;
-    margin-bottom:.15rem;
-
-    font-size:1.2rem;
-    font-weight:400;
-    line-height:1;
-    letter-spacing:-.02em;
-
-    color:#2F343A;
-
-}
-
-.project-bfd p,
-.project-aio p{
-
-    margin:0;
-
-    font-size:1rem;
-    font-weight:400;
-    line-height:1.25;
-
-    color:#5B6065;
-
-}
 
 .architecture-introduction{
 
     max-width:550px;
 
-    margin:0 auto 120px;
+    margin:0 auto 90px;
 
     text-align:center;
 
 }
+
 
 .architecture-introduction p{
 
@@ -531,20 +528,38 @@ img{
 
 }
 
+
+/* ----------------------------------------------------------
+   PROJECT PLATE GRID
+---------------------------------------------------------- */
+
 .architecture-wall{
 
-    position:relative;
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:28px;
 
     width:100%;
 
-    min-height:1800px;
+    max-width:1280px;
+
+    margin:0 auto;
+
+    padding:0 24px;
 
 }
+
+
+/* ----------------------------------------------------------
+   PROJECT PLATE
+---------------------------------------------------------- */
 
 .project-bfd,
 .project-aio{
 
-    position:absolute;
+    width:100%;
 
     display:block;
 
@@ -552,87 +567,89 @@ img{
 
     color:inherit;
 
-}
+    border:1px solid rgba(47,52,58,.38);
 
-.project-bfd{
-
-    width:280px;
-
-    left:30%;
-
-    top:5px;
+    padding:8px;
 
 }
 
-.project-aio{
 
-    width:360px;
-
-    right:29%;
-
-    top:70px;
-
-}
-
-.project-three{
-
-}
-
-.project-four{
-
-}
-
-.project-five{
-
-}
-
-.project-six{
-
-}
+/* ----------------------------------------------------------
+   PROJECT IMAGE
+---------------------------------------------------------- */
 
 .project-bfd img,
 .project-aio img{
 
-    width:100%;
-
-    height:auto;
-
     display:block;
 
-    box-shadow:
-        0 16px 40px rgba(0,0,0,.12);
+    width:100%;
 
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+    height:160px;
 
-}
+    object-fit:cover;
 
-.project-bfd:hover img,
-.project-aio:hover img{
-
-    transform:scale(1.01);
-
-    box-shadow:
-        0 24px 60px rgba(0,0,0,.16);
+    object-position:center;
 
 }
+
+
+/* ----------------------------------------------------------
+   PROJECT CAPTION
+---------------------------------------------------------- */
 
 .project-bfd h2,
 .project-aio h2{
 
-    margin-top:1.4rem;
+    margin:10px 0 4px;
 
-    margin-bottom:.45rem;
+    font-size:1rem;
+
+    font-weight:400;
+
+    line-height:1.1;
+
+    letter-spacing:-.02em;
+
+    color:#2F343A;
 
 }
+
 
 .project-bfd p,
 .project-aio p{
 
     margin:0;
 
-    line-height:1.6;
+    font-size:.82rem;
+
+    font-weight:400;
+
+    line-height:1.3;
+
+    color:#5B6065;
+
+}
+
+
+/* ----------------------------------------------------------
+   PROJECT PLATE HOVER
+---------------------------------------------------------- */
+
+.project-bfd,
+.project-aio{
+
+    transition:
+        border-color .25s ease,
+        background .25s ease;
+
+}
+
+
+.project-bfd:hover,
+.project-aio:hover{
+
+    border-color:rgba(47,52,58,.65);
 
 }
 
@@ -694,7 +711,7 @@ img{
 
 .art-page{
 
-    background:#c0b6a6;
+    background:#e3ddd1;
 
     overflow-y:auto;
 
@@ -798,6 +815,98 @@ img{
 }
 
 /* ==========================================================
+   ART INTRODUCTION
+========================================================== */
+
+.art-page{
+
+    min-height:100vh;
+
+    background:#c5a462b6;
+
+    color:#2F343A;
+
+}
+
+
+.art-introduction{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 40px;
+
+}
+
+
+.art-introduction h1{
+
+    margin:0 0 3rem;
+
+    font-size:5.2rem;
+
+    font-weight:700;
+
+    line-height:.95;
+
+    letter-spacing:-.01em;
+
+    color:#2F343A;
+
+}
+
+
+.art-introduction-text{
+
+    max-width:600px;
+
+    margin-bottom:3rem;
+
+}
+
+
+.art-introduction-text p{
+
+    margin:0;
+
+    font-size:1.15rem;
+
+    line-height:1.7;
+
+    color:#575144;
+
+}
+
+
+.art-collection-link{
+
+    color:#2F343A;
+
+    text-decoration:none;
+
+    font-size:1rem;
+
+    letter-spacing:.04em;
+
+}
+
+
+.art-collection-link:hover{
+
+    color:#753d3d;
+
+}
+
+/* ==========================================================
    COLLECTION HANGING
 ========================================================== */
 
@@ -807,7 +916,7 @@ img{
     top:70px;
 }
 
-.balance{
+.meanwhile{
     width:140px;
     left:47.5%;
     top:3px;
@@ -980,34 +1089,343 @@ img{
    PROCESS
 ========================================================== */
 
-.process{
-
-    max-width:900px;
-
-    margin:0 auto;
-
-}
-
-.process p{
-
-    margin-bottom:2rem;
-
-    line-height:1.85;
-
-}
-
-.process h2{
-
+.process h2 {
     margin:
         3.5rem
         0
         1.5rem;
 
-    font-size:2rem;
-
-    font-weight:500;
-
+    font-size: 2rem;
+    font-weight: 500;
 }
+
+/* PROCESS — WHAU FLOWER */
+
+.process figure img {
+    width: 55px;
+    height: auto;
+}
+
+.whau-link {
+    display: block;
+    width: 80px;
+    height: 80px;
+
+    position: absolute;
+    left: 30px;
+    top: 70px;
+}
+
+.whau-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ==========================================================
+   PROCESS PAGE
+========================================================== */
+
+
+.process-page {
+    min-height:100vh;
+    background-image:url("../images/ui/tabletopb&w.webp");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    color:#2F343A;
+}
+
+
+.process-page .process {
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    padding: 160px 60px 100px;
+    text-align: center;
+}
+
+.process-page h1 {
+    margin:0 0 2.5rem;
+    font-size:clamp(3.5rem, 7vw, 5.5rem);
+    font-weight:500;
+    line-height:1;
+    color:#2F343A;
+}
+
+.process-introduction {
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+}
+
+.process-introduction p {
+    font-size:clamp(1.15rem, 1.8vw, 1.4rem);
+    line-height:1.7;
+    color:#2F343A;
+}
+
+
+/* A1 PROCESS SHEET */
+
+.process-page .a1-sheet {
+    width: min(95vw, 1600px);
+    min-height: clamp(4500px, 660vh, 7800px);
+    margin: 50px auto 100px;
+    background: #F9F8F4;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+    position: relative;
+}
+
+.process-piece {
+    position: absolute;
+    margin: 0;
+}
+
+.process-piece img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.process-piece--villa-ruins {
+    top: clamp(3rem, 8vw, 8rem);
+    left: clamp(1.5rem, 8vw, 9rem);
+    width: min(58vw, 720px);
+}
+
+.process-preview-piece {
+    position: absolute;
+    margin: 0;
+    pointer-events: none;
+}
+
+.process-preview-piece img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.process-preview-piece--note {
+    margin: 0;
+    padding: 1rem;
+    background: rgba(249, 248, 244, .9);
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+
+/* PRIVATE PROCESS STUDIO */
+
+.studio-page {
+    min-height: 100vh;
+    background: #5A4A3E;
+    color: #2F343A;
+}
+
+.studio-editor {
+    padding: 2rem;
+}
+
+.studio-tools {
+    width: min(100%, 1600px);
+    margin: 0 auto 1rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    background: #F9F8F4;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+}
+
+.studio-eyebrow,
+.studio-status {
+    margin: 0;
+    font-size: .8rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.studio-tools h1 {
+    margin: .2rem 0;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+}
+
+.studio-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.studio-colour-palette {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+}
+
+.studio-colour-palette > span {
+    margin-right: .15rem;
+    font-size: .8rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.studio-colour {
+    width: 1.4rem;
+    height: 1.4rem;
+    padding: 0;
+    border: 1px solid rgba(47, 52, 58, .45);
+    border-radius: 0;
+    background: var(--swatch);
+    cursor: pointer;
+}
+
+.studio-colour[aria-pressed="true"] {
+    outline: 2px solid #2F343A;
+    outline-offset: 2px;
+}
+
+.studio-colour[data-colour="ink"] { --swatch: #2F343A; }
+.studio-colour[data-colour="brown"] { --swatch: #5A4A3E; }
+.studio-colour[data-colour="bluegrey"] { --swatch: #57737D; }
+.studio-colour[data-colour="moss"] { --swatch: #414838; }
+.studio-colour[data-colour="clay"] { --swatch: #A86A58; }
+.studio-colour[data-colour="paper"] { --swatch: #E9DDC8; }
+
+.studio-button {
+    padding: .7rem .9rem;
+    border: 1px solid #2F343A;
+    border-radius: 0;
+    background: #2F343A;
+    color: #F9F8F4;
+    font: inherit;
+    cursor: pointer;
+}
+
+.studio-button--quiet {
+    background: transparent;
+    color: #2F343A;
+}
+
+.studio-paper {
+    width: min(100%, 1600px);
+    min-height: 8000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: #F9F8F4;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+}
+
+.studio-paper-hint {
+    margin: 0;
+    padding: 4rem;
+    color: rgba(47, 52, 58, .6);
+    font-size: 1.1rem;
+}
+
+.studio-item {
+    position: absolute;
+    touch-action: none;
+    cursor: grab;
+}
+
+.studio-item:active {
+    cursor: grabbing;
+}
+
+.studio-item.is-selected {
+    outline: 1px dashed rgba(47, 52, 58, .55);
+    outline-offset: .4rem;
+}
+
+.studio-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.studio-note {
+    min-height: 5rem;
+    padding: 1rem;
+    outline: 1px solid rgba(47, 52, 58, .3);
+    background: rgba(249, 248, 244, .9);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    cursor: grab;
+}
+
+.studio-note-text {
+    min-height: 3rem;
+    outline: none;
+    cursor: text;
+}
+
+.studio-resize {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid #2F343A;
+    border-radius: 0;
+    background: #F9F8F4;
+    cursor: nwse-resize;
+}
+
+.studio-context-menu {
+    min-width: 10rem;
+    position: fixed;
+    z-index: 100;
+    padding: .35rem;
+    border: 1px solid rgba(47, 52, 58, .3);
+    background: #F9F8F4;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .16);
+}
+
+.studio-context-menu button {
+    width: 100%;
+    padding: .55rem .7rem;
+    border: 0;
+    background: transparent;
+    color: #2F343A;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.studio-context-menu button:hover,
+.studio-context-menu button:focus-visible {
+    background: rgba(47, 52, 58, .1);
+    outline: none;
+}
+
+@media (max-width: 700px) {
+    .studio-editor {
+        padding: .75rem;
+    }
+
+    .studio-tools {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .studio-colour-palette {
+        flex-wrap: wrap;
+    }
+
+    .studio-paper {
+        min-height: 6000px;
+    }
+}
+
+
 
 /* ==========================================================
    RESPONSIVE
@@ -1247,7 +1665,7 @@ img{
 
 .about-page{
 
-    background:#6e7768;
+    background:#8e947da6;
 
     color:var(--text);
 
@@ -1341,19 +1759,19 @@ img{
 
     margin:0 0 2rem;
 
-    left:-40px;
+    left:-35px;
 
-    top:-90px;
+    top:-32px;
 
     width:900px;
 
     white-space:nowrap;
 
-    font-family:"Arial Black", Arial, Helvetica, sans-serif;
+    font-family:Helvetica, Arial, sans-serif;
 
-    font-size:4rem;
+    font-size:5.2rem;
 
-    font-weight:900;
+    font-weight:700;
 
     line-height:.9;
 
@@ -1361,7 +1779,7 @@ img{
 
     text-transform:lowercase;
 
-    color:#414838;
+    color:#57737d;
 
     z-index:10;
 
@@ -1371,7 +1789,7 @@ img{
 
     position:relative;
 
-    top:-55px;
+    top:-41px;
 
     margin-bottom:1.5rem;
 
