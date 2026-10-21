@@ -1638,7 +1638,7 @@ body:has(.artwork-page){
 /* Architecture project detail images are intentionally more intimate. */
 .architecture-project-figure img{
 
-    max-width:30%;
+    max-width:90%;
 
 }
 
