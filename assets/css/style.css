@@ -667,16 +667,16 @@ img{
 .collection-introduction{
     max-width:760px;
     margin:0 auto;
-    padding:120px 40px 90px;
+    padding:390px 40px 35px;
 }
 
 
 .collection-introduction h1{
-    margin:0 0 2rem;
+    margin:0 0 4rem;
 
-    font-size:clamp(4rem, 7vw, 6rem);
-    font-weight:500;
-    line-height:.95;
+    font-size:clamp(1.5rem, 7vw, 6rem);
+    font-weight:600;
+    line-height:0.1;
     letter-spacing:-.04em;
 }
 
@@ -686,7 +686,7 @@ img{
 
     margin:0;
 
-    font-size:1.05rem;
+    font-size:2.05rem;
     line-height:1.8;
     color:#050505;
 }
@@ -725,7 +725,7 @@ img{
 .artwork-card h2{
     margin:18px 0 0;
 
-    font-size:1rem;
+    font-size:0.9rem;
     font-weight:400;
     line-height:1.3;
     letter-spacing:.01em;
@@ -1661,13 +1661,17 @@ body:has(.artwork-page){
 
     margin:.25rem 0;
 
+    font-size:1.05rem;
+    line-height:1.55;
+
 }
 
 .artwork-text{
 
     margin-top:2rem;
 
-    line-height:1.8;
+    font-size:clamp(1.1rem, 1.25vw, 1.25rem);
+    line-height:1.7;
 
 }
 
