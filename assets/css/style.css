@@ -1635,6 +1635,13 @@ body:has(.artwork-page){
 
 }
 
+/* Architecture project detail images are intentionally more intimate. */
+.architecture-project-figure img{
+
+    max-width:30%;
+
+}
+
 .artwork-details{
 
     margin-top:3rem;
