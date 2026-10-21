@@ -862,11 +862,7 @@ img{
 
 .process-page {
     min-height:100vh;
-    background-image:url("../images/ui/tabletopb&w.webp");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    background-repeat:no-repeat;
+    background:#f7f4e9;
     color:#2F343A;
 }
 
